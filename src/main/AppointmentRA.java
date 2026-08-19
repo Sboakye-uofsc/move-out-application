@@ -1,21 +1,22 @@
+import java.util.ArrayList;
+
 public class AppointmentRA {
     private RA ra;
 
     private int unavailable;
     private int startTime;
     private int endTime;
+    private ArrayList<Integer> trackerTime;
     
     public AppointmentRA(){
-        this.unavailable = unavailable;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        super();
     }
 
     public void setUnavailable(int unavailable){
-        if(startTime != 0){
-            for(int i = 0; i < 10; i++){
-               
-            }
+        
+        while(unavailable >= getStartTime() && unavailable <= getEndTime()){
+            trackerTime.add(trackerTime.size());
+            unavailable++;
         }
     }
 
@@ -25,14 +26,13 @@ public class AppointmentRA {
 
     public void undoUnavailable(){
         if(unavailable != 0){
+            trackerTime.remove(trackerTime.size());
             unavailable--;
         }
     }
 
     public void setStartTime(int startTime){
-        int startTime = 0;
-
-        
+        trackerTime.add(startTime);
     }
 
     public int getStartTime(){
@@ -40,10 +40,10 @@ public class AppointmentRA {
     }
 
     public void setEndTime(int endTime){
-
+        trackerTime.add(endTime);
     }
 
     public int getEndTime(){
-        
+        return endTime;
     }
 }
