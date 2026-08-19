@@ -14,7 +14,7 @@ public class AppointmentRA {
     public void setUnavailable(int unavailable){
         if(startTime != 0){
             for(int i = 0; i < 10; i++){
-                unavailable.getRAUnavailable();
+               
             }
         }
     }
