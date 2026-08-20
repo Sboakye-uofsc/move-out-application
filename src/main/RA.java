@@ -14,7 +14,9 @@ public class RA extends User {
     }
 
     public void setRAUnavailable(AppointmentRA unavailable){
-        
+        if(unavailable){
+            
+        }
     }
 
     public AppointmentRA getRAUnavailable(){
