@@ -1,8 +1,11 @@
+import java.util.Scanner;
+
 public class RA extends User {
 
     private Resident residentAssigned;
     private AppointmentRA unavailable;
     private RA otherRA;
+    private static AppointmentRA ra = new AppointmentRA();
 
     public RA(){
         super();
@@ -13,9 +16,11 @@ public class RA extends User {
         this.type = "RA";
     }
 
-    public void setRAUnavailable(AppointmentRA unavailable){
-        if(unavailable){
-            
+    public void setRAUnavailable(int unavailable, int unRA){
+        
+        if(ra.getUnavailable() <= 0){
+           ra.setStartTime(unavailable);
+           ra.setEndTime(unRA);
         }
     }
 
@@ -32,6 +37,13 @@ public class RA extends User {
     }
 
     public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        RA raVeiw = new RA();
+        int start = keyboard.nextInt();
+        int end = keyboard.nextInt();
         
+        raVeiw.setRAUnavailable(start, end);
+        
+        System.out.println(ra.getUnavailable());
     }
 }

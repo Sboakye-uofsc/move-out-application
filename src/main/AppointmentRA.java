@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class AppointmentRA {
+    RA ra;
 
     private int unavailable;
     private int startTime;
@@ -38,6 +39,7 @@ public class AppointmentRA {
     public void setStartTime(int startTime){
         this.startTime = startTime;
         trackerTime.add(startTime);
+        setUnavailable();
     }
 
     public int getStartTime(){
@@ -47,22 +49,21 @@ public class AppointmentRA {
     public void setEndTime(int endTime){
         this.endTime = endTime;
         trackerTime.add(endTime);
+        setUnavailable();
     }
 
     public int getEndTime(){
         return endTime;
     }
 
-    public static void main(String[] args){
-        AppointmentRA appointment = new AppointmentRA();
-        appointment.setStartTime(11);
-        appointment.setEndTime(13);
-        appointment.setUnavailable();
-        System.out.println(appointment.getUnavailable());
+    // public static void main(String[] args){
+    //     AppointmentRA appointment = new AppointmentRA();
+    //     appointment.setStartTime(11);
+    //     appointment.setEndTime(13);
+    //     System.out.println(appointment.getUnavailable());
         
-        appointment.setStartTime(15);
-        appointment.setEndTime(18);
-        appointment.setUnavailable();
-        System.out.println(appointment.getUnavailable());
-    }
+    //     appointment.setStartTime(15);
+    //     appointment.setEndTime(18);
+    //     System.out.println(appointment.getUnavailable());
+    // }
 }
